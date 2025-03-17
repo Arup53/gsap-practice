@@ -46,10 +46,42 @@ gsap.from("#page1 #box1", {
   duration: 1.5,
   rotate: 360,
 });
-gsap.from("#page2 #box2", {
-  scale: 0,
-  delay: 1,
-  duration: 2,
-  rotate: 360,
-  scrollTrigger: "page2 #box2",
+
+// ---------basic--------
+
+// gsap.from("#page2 #box2", {
+//   scale: 0,
+//   delay: 1,
+//   duration: 2,
+//   rotate: 360,
+//   scrollTrigger: "page2 #box2",
+// });
+
+// --------as a object ---------
+// gsap.from("#page2 #box2", {
+//   scale: 0,
+//   delay: 1,
+//   duration: 1,
+//   rotate: 360,
+//   scrollTrigger: {
+//     trigger: "#page2 #box2",
+//     scroller: "body",
+//     markers: true,
+//     start: "top 60%",
+//     end: "top 30%",
+//     scrub: 3, //true or value from 1 to 5
+//   },
+// });
+
+gsap.to("#page2 h1 ", {
+  transform: "translateX(-90%)",
+  scrollTrigger: {
+    trigger: "#page2",
+    scroller: "body",
+    markers: true,
+    start: "top 0%",
+    end: "top -100%",
+    scrub: 2,
+    pin: true, // blocks moving to new page until current animation or page is finished
+  },
 });
