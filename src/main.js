@@ -20,14 +20,36 @@ import { gsap } from "gsap";
 //   delay: 2.5,
 // });
 
-let tl = gsap.timeline();
+// ---------------- Timeline ----------------------
 
-tl.to(".logo1", {
-  x: 1200,
-  duration: 1.5,
+// let tl = gsap.timeline();
+
+// tl.to(".logo1", {
+//   x: 1200,
+//   duration: 1.5,
+//   delay: 1,
+//   rotate: 360,
+// });
+// tl.to(".logo2", {
+//   x: 1200,
+// });
+
+// ------------------SCROLL TIGGER--------------
+
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.from("#page1 #box1", {
+  scale: 0,
   delay: 1,
+  duration: 1.5,
   rotate: 360,
 });
-tl.to(".logo2", {
-  x: 1200,
+gsap.from("#page2 #box2", {
+  scale: 0,
+  delay: 1,
+  duration: 2,
+  rotate: 360,
+  scrollTrigger: "page2 #box2",
 });
