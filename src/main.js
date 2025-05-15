@@ -40,12 +40,12 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.from("#page1 #box1", {
-  scale: 0,
-  delay: 1,
-  duration: 1.5,
-  rotate: 360,
-});
+// gsap.from("#page1 #box1", {
+//   scale: 0,
+//   delay: 1,
+//   duration: 1.5,
+//   rotate: 360,
+// });
 
 // ---------basic--------
 
@@ -58,6 +58,7 @@ gsap.from("#page1 #box1", {
 // });
 
 // --------as a object ---------
+
 // gsap.from("#page2 #box2", {
 //   scale: 0,
 //   delay: 1,
@@ -73,15 +74,21 @@ gsap.from("#page1 #box1", {
 //   },
 // });
 
-gsap.to("#page2 h1 ", {
-  transform: "translateX(-90%)",
-  scrollTrigger: {
-    trigger: "#page2",
-    scroller: "body",
-    markers: true,
-    start: "top 0%",
-    end: "top -100%",
-    scrub: 2,
-    pin: true, // blocks moving to new page until current animation or page is finished
-  },
-});
+// gsap.to("#page2 h1 ", {
+//   transform: "translateX(-90%)",
+//   scrollTrigger: {
+//     trigger: "#page2",
+//     scroller: "body",
+//     markers: true,
+//     start: "top 0%",
+//     end: "top -100%",
+//     scrub: 2,
+//     pin: true, // blocks moving to new page until current animation or page is finished
+//   },
+// });
+
+gsap.fromTo(
+  "#box1",
+  { x: 200 },
+  { x: -400, rotation: 360, yoyo: true, repeat: 2, duration: 2 }
+);
