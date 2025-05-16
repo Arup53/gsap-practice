@@ -87,8 +87,16 @@ gsap.registerPlugin(ScrollTrigger);
 //   },
 // });
 
-gsap.fromTo(
-  "#box1",
-  { x: 200 },
-  { x: -400, rotation: 360, yoyo: true, repeat: 2, duration: 2 }
+// staggers example; Stagger is starting delay of an element in a group of elements ,ex: if staggers is 0.5 second box will start animating after 0.5second after first element is started animating
+gsap.to(
+  ".box1",
+
+  {
+    x: 400,
+    rotation: 360,
+    duration: 2,
+    stagger: 0.5,
+    repeat: -1,
+    yoyo: true,
+  }
 );
